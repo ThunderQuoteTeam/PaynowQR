@@ -22,7 +22,7 @@ const PaynowQR = require('paynowqr');
 You can use the CDN link provided by unpkg:
 
 ```html
-<script src="https://unpkg.com/paynowqr@1.0.0/dist/paynowqr.min.js"></script>
+<script src="https://unpkg.com/paynowqr@latest/dist/paynowqr.min.js"></script>
 ```
 
 
