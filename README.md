@@ -22,6 +22,6 @@ let qrcode = new PaynowQR({
   let QRstring = qrcode.output();
 ```
 
-#Credits
+# Credits
 Original code referenced from:
 https://gist.github.com/chengkiang/7e1c4899768245570cc49c7d23bc394c
