@@ -1,5 +1,7 @@
 # PaynowQR
-Singapore Paynow QR generator for node.js and javascript
+Singapore Paynow QR generator for node.js and javascript.
+
+Currently WIP.
 
 # Usage Instructions
 
