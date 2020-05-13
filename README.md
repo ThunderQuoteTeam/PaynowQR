@@ -21,3 +21,7 @@ let qrcode = new PaynowQR({
   //Outputs the qrcode to a UTF-8 string format, which can be passed to a QR code generation script to generate the paynow QR
   let QRstring = qrcode.output();
 ```
+
+#Credits
+Original code referenced from:
+https://gist.github.com/chengkiang/7e1c4899768245570cc49c7d23bc394c
