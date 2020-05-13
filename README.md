@@ -18,6 +18,7 @@ const PaynowQR = require('paynowqr');
 ```
 
 **Browser**
+
 You can use the CDN link provided by unpkg:
 
 ```html
@@ -42,7 +43,7 @@ let qrcode = new PaynowQR({
   //Outputs the qrcode to a UTF-8 string format, which can be passed to a QR code generation script to generate the paynow QR
   let QRstring = qrcode.output();
 ```
-# Todo
+# To do
 Incorporate QR generation into the PaynowQR class with logo / branding options
 
 # Credits
