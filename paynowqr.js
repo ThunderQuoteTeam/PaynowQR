@@ -2,7 +2,9 @@ const dayjs = require('dayjs');
 
 class PaynowQR{
   constructor(opts){
-    this.qrstring = this.generate(opts);
+    Object.defineProperty(this, 'qrstring',{
+      value : this.generate(opts)
+    });
   }
   output(){
     return this.qrstring;
@@ -128,12 +130,4 @@ class PaynowQR{
   
   }
 }
-  let output = new PaynowQR({
-    uen:'201403121W',
-    //editable: true,
-    //expiry: '20190530',
-    amount : 500,
-    refNumber: 'TQINV-10001'
-  }).output();
-
-  console.log(output);
+module.exports = PaynowQR;
