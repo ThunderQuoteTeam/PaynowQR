@@ -1,0 +1,24 @@
+{
+  "name": "paynowqr",
+  "version": "1.0.0",
+  "description": "Singapore Paynow QR generator for node.js and javascript",
+  "main": "index.js",
+  "dependencies": {
+    "dayjs": "^1.8.26",
+    "paynow-generator": "^1.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThunderQuoteTeam/PaynowQR.git"
+  },
+  "author": "ThunderQuote",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThunderQuoteTeam/PaynowQR/issues"
+  },
+  "homepage": "https://github.com/ThunderQuoteTeam/PaynowQR#readme"
+}
