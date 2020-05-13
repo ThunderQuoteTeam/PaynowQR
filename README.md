@@ -4,9 +4,31 @@ Singapore Paynow QR generator for node.js and javascript.
 
 # Usage Instructions
 
-```
-const PaynowQR = require('paynowqr');
+**On node.js**
 
+Install via npm
+```
+$ npm i paynowqr
+```
+
+In your code, include the following:
+
+```javascript
+const PaynowQR = require('paynowqr');
+```
+
+**Browser**
+You can use the CDN link provided by unpkg:
+
+```html
+<script src="https://unpkg.com/paynowqr@1.0.0/dist/paynowqr.min.js"></script>
+```
+
+
+
+*Example usage:*
+
+```javascript
 //Create a PaynowQR object
 let qrcode = new PaynowQR({
     uen:'201403121W',         //Required: UEN of company
