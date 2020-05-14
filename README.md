@@ -1,5 +1,8 @@
 # PaynowQR
-Singapore Paynow QR generator for node.js and javascript. Works on both browser and nodejs.
+Singapore Paynow QR generator for node.js and javascript. Works on both browser and nodejs. 
+
+Have any questions or need help to do a custom implementation? 
+Feel free to drop us an email at hello@thunderquote.com.
 
 # Usage Instructions
 
