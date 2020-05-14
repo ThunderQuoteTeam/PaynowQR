@@ -54,9 +54,12 @@ Incorporate QR generation into the PaynowQR class with logo / branding options
 Original code referenced from:
 https://gist.github.com/chengkiang/7e1c4899768245570cc49c7d23bc394c
 
+See also:
+https://github.com/jtaych/PayNow-QR-Javascript
+https://github.com/mindmedia/paynow.py
 
 Developed by ThunderQuote (https://www.thunderquote.com)
 
-Was looking around for various ways to implement dynamic QR codes for payment over Javascript, however couldnt find any that worked with UEN based payments.
+Was looking around for various ways to implement dynamic SGQR codes for payment over Javascript, however couldnt find any that worked with UEN based payments.
 
 Feel free to report any issues and feature requests!
