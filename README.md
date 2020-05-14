@@ -5,7 +5,12 @@ Have any questions or need help to do a custom implementation?
 
 Feel free to drop us an email at hello@thunderquote.com.
 
-# Usage Instructions
+### Demo
+> https://code.thunderquote.com/PaynowQR/
+
+
+
+## Usage Instructions
 
 **On nodejs**
 
@@ -46,18 +51,26 @@ let qrcode = new PaynowQR({
   //Outputs the qrcode to a UTF-8 string format, which can be passed to a QR code generation script to generate the paynow QR
   let QRstring = qrcode.output();
 ```
-# Potential usecases:
+
+
+## Potential usecases:
+
 Dynamically generating payment QR codes on e-commerce or donation pages that allow tracking of payments via reference codes.
 
 Can be used in conjunction with Bank APIs to detect resolved payments.
 
-# To do
+
+
+## To do
+
 Do up a frontend demo page.
 
 Incorporate QR generation into the PaynowQR class with logo / branding options
 
 
-# Credits
+
+## Credits
+
 Original code referenced from:
 https://gist.github.com/chengkiang/7e1c4899768245570cc49c7d23bc394c
 
