@@ -1,10 +1,9 @@
 # PaynowQR
-Singapore Paynow QR generator for node.js and javascript.
-
+Singapore Paynow QR generator for node.js and javascript. Works on both browser and nodejs.
 
 # Usage Instructions
 
-**On node.js**
+**On nodejs**
 
 Install via npm
 ```
@@ -44,8 +43,17 @@ let qrcode = new PaynowQR({
   let QRstring = qrcode.output();
 ```
 # To do
+Do up a frontend demo page.
 Incorporate QR generation into the PaynowQR class with logo / branding options
+
 
 # Credits
 Original code referenced from:
 https://gist.github.com/chengkiang/7e1c4899768245570cc49c7d23bc394c
+
+
+Developed by ThunderQuote (https://www.thunderquote.com)
+
+Was looking around for various ways to implement dynamic QR codes for payment over Javascript, however couldnt find any that worked with UEN based payments.
+
+Feel free to report any issues and feature requests!
