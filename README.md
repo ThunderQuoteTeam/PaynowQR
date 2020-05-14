@@ -45,6 +45,10 @@ let qrcode = new PaynowQR({
   //Outputs the qrcode to a UTF-8 string format, which can be passed to a QR code generation script to generate the paynow QR
   let QRstring = qrcode.output();
 ```
+# Potential usecases:
+Dynamically generating payment QR codes on e-commerce or donation pages that allow tracking of payments via reference codes
+Can be used in conjunction with Bank APIs to detect resolved payments.
+
 # To do
 Do up a frontend demo page.
 Incorporate QR generation into the PaynowQR class with logo / branding options
