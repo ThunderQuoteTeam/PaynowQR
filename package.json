@@ -5,6 +5,9 @@
   "main": "dist/paynowqr.umd.js",
   "module": "dist/paynowqr.esm.js",
   "unpkg": "dist/paynowqr.min.js",
+  "files": [
+    "/dist"
+  ],
   "dependencies": {
     "dayjs": "^1.8.26"
   },

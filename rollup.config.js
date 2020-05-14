@@ -4,7 +4,7 @@ import {terser} from "rollup-plugin-terser";
 
 export default [
     {
-        input: 'paynowqr.js',
+        input: 'src/paynowqr.js',
         output: {
             name:'PaynowQR',
             format: 'umd',
@@ -13,7 +13,7 @@ export default [
         plugins: [commonjs(),resolve()]
     },
     {
-        input: 'paynowqr.js',
+        input: 'src/paynowqr.js',
         output: {
             name:'PaynowQR',
             format: 'esm',
@@ -22,7 +22,7 @@ export default [
         plugins: [commonjs(),resolve()]
     },
     {
-        input: 'paynowqr.js',
+        input: 'src/paynowqr.js',
         output: {
             name:'PaynowQR',
             format: 'iife',
@@ -31,7 +31,7 @@ export default [
         plugins: [commonjs(),resolve()]
     },
     {
-        input: 'paynowqr.js',
+        input: 'src/paynowqr.js',
         output: {
             name:'PaynowQR',
             format: 'iife',
