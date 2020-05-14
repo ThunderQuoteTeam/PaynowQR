@@ -56,6 +56,7 @@ https://gist.github.com/chengkiang/7e1c4899768245570cc49c7d23bc394c
 
 See also:
 https://github.com/jtaych/PayNow-QR-Javascript
+
 https://github.com/mindmedia/paynow.py
 
 Developed by ThunderQuote (https://www.thunderquote.com)
