@@ -1,6 +1,6 @@
 {
   "name": "paynowqr",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Singapore Paynow QR generator for node.js and javascript",
   "main": "dist/paynowqr.umd.js",
   "module": "dist/paynowqr.esm.js",
