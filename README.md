@@ -1,7 +1,8 @@
 # PaynowQR
 Singapore Paynow QR generator for node.js and javascript. Works on both browser and nodejs. 
 
-Have any questions or need help to do a custom implementation? 
+Have any questions or need help to do a custom implementation?
+
 Feel free to drop us an email at hello@thunderquote.com.
 
 # Usage Instructions
@@ -47,6 +48,7 @@ let qrcode = new PaynowQR({
 ```
 # Potential usecases:
 Dynamically generating payment QR codes on e-commerce or donation pages that allow tracking of payments via reference codes
+
 Can be used in conjunction with Bank APIs to detect resolved payments.
 
 # To do
