@@ -6,6 +6,7 @@ Have any questions or need help to do a custom implementation?
 Feel free to drop us an email at hello@thunderquote.com.
 
 ### Demo
+> See it in action here:
 > https://code.thunderquote.com/PaynowQR/
 
 
@@ -62,8 +63,6 @@ Can be used in conjunction with Bank APIs to detect resolved payments.
 
 
 ## To do
-
-Do up a frontend demo page.
 
 Incorporate QR generation into the PaynowQR class with logo / branding options
 
