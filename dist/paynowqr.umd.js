@@ -97,6 +97,11 @@
 	  
 	  generate( opts ) {
 
+	    for(let key in opts){
+	      if(typeof opts[key] == 'string'){
+	        opts[key] = opts[key].trim();
+	      }
+	    }
 
 	  
 	    const p = [
@@ -115,14 +120,20 @@
 	      { id: '54', value: String(opts.amount || 0) },  // ID 54: Transaction Amount
 	      { id: '58', value: 'SG' },                    // ID 58: 2-letter Country Code (SG)
 	      { id: '59', value: String(opts.company ||'COMPANY') },          // ID 59: Company Name
-	      { id: '60', value: 'Singapore' },             // ID 60: Merchant City
-	      {
-	        id: '62', value: [{                         // ID 62: Additional data fields
-	          id: '01', value: String(opts.refNumber||'')           // ID 01: Bill Number
-	        }]
-	      }
+	      { id: '60', value: 'Singapore' }             // ID 60: Merchant City
+	      
 	    ];
 	  
+	    let otherdata = {
+	      id: '62', value: [{                         // ID 62: Additional data fields
+	        id: '01', value: String(opts.refNumber||'')           // ID 01: Bill Number
+	      }]
+	    };
+
+	    if(opts.refNumber){
+	      p.push(otherdata);
+	    }
+
 	    let str = p.reduce((final, current) => {
 	      if (Array.isArray(current.value)) { //nest loop
 	        current.value = current.value.reduce((f, c) => {
