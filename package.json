@@ -1,6 +1,6 @@
 {
   "name": "paynowqr",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Singapore Paynow QR generator for node.js and javascript",
   "main": "dist/paynowqr.umd.js",
   "module": "dist/paynowqr.esm.js",
@@ -31,7 +31,7 @@
     "url": "https://github.com/ThunderQuoteTeam/PaynowQR/issues"
   },
   "homepage": "https://github.com/ThunderQuoteTeam/PaynowQR#readme",
-  "keywords":[
+  "keywords": [
     "paynow",
     "SGQR",
     "Singapore",
