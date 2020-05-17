@@ -1330,7 +1330,7 @@ h1 {
   height: 166px;
   z-index: -1;
   outline: 20px solid transparent;
-  background: #5455b9;
+  background: #7273d8;
   overflow: hidden;
   transform: skewY(-44deg);
 } 
@@ -1351,6 +1351,7 @@ h1 {
 .new-box {
   background: #6b6cb3fa;
   width: 800px;
+  border-radius: 4px;
   /* border: 3px solid #8c8cfa; */
   box-shadow: 4px 17px 52px -3px #6768c5;
 }
