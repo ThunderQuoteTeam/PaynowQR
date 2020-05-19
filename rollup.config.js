@@ -3,7 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import {terser} from "rollup-plugin-terser";
 import json from "@rollup/plugin-json";
 import nativePlugin from 'rollup-plugin-natives';
-import builtins from 'rollup-plugin-node-builtins';
+import builtins from '@joseph184/rollup-plugin-node-builtins';
 
 let native = nativePlugin({
     copyTo: './dist',
