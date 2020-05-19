@@ -1,5 +1,4 @@
-//File paynowqr.min.js (For usage in the browser)
-const PaynowQR = require('./dist/paynowqr.min.js');
+
 
 //Create a PaynowQR object
 let qrcode = new PaynowQR({
@@ -66,9 +65,9 @@ let qrcode = new PaynowQR({
     logoWidth: 76,
     logoHeight: 76,
     useLogo: true,
-    customLogo: 'data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7',
+    //customLogo: 'data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7',
     logoBackgroundColor: '#ffffff',
-    logoBackgroundTransparent: true,
+    logoBackgroundTransparent: false,
   };
 
   qrcode.saveQRCodeImage('qrcode.png', options);

@@ -1,5 +1,13 @@
 const PaynowQRBase = require('./paynowqr.base.js');
-const QRCode = require('easyqrcodejs-nodejs');
+var QRCode;
+var allowQR = true;
+    try{
+       QRCode = require('easyqrcodejs-nodejs');
+    }catch(err){
+      allowQR = false;
+    }
+
+
 
 class PaynowQR extends PaynowQRBase{
   constructor(opts){
@@ -7,7 +15,9 @@ class PaynowQR extends PaynowQRBase{
   }
   
   saveQRCodeImage(loc, opts = {}) {
-
+    if(!allowQR){
+      throw 'Missing dependencies for QR module, Only non .output() will work;';
+    }
     if (!loc) {
       loc = 'output.png'
     };
@@ -38,6 +48,9 @@ class PaynowQR extends PaynowQRBase{
   }
 
   async getQRCodeImageDataURL(opts = {}) {
+    if(!allowQR){
+      throw 'Missing dependencies for QR module, Only non .output() will work;';
+    }
     let defaultOpts = this.getDefaultOpts();
 
     let finalOpts = {};

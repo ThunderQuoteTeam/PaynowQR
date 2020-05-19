@@ -31,7 +31,7 @@ export default [
                 'zlib': 'zlib'
             }
         },
-        plugins: [native,resolve(),commonjs(),json(),],
+        plugins: [native,commonjs(),json(),],
         external: [ 'fs', 'util', 'stream', 'http', 'https', 'querystring', 'url', 'zlib' ]
         
     },
@@ -52,7 +52,7 @@ export default [
                 'zlib': 'zlib'
             }
         },
-        plugins: [native,resolve(),commonjs(),json(),],
+        plugins: [native,commonjs(),json(),],
         external: [ 'fs', 'util', 'stream', 'http', 'https', 'querystring', 'url', 'zlib' ]
         
     },
