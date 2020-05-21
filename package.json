@@ -11,6 +11,7 @@
     "@openfonts/montserrat_all": "^1.44.1",
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.14.0",
+    "canvas-txt": "^2.0.8",
     "core-js": "^3.6.4",
     "easyqrcodejs": "^3.6.0",
     "paynowqr": "^1.1.0",
