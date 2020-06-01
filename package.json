@@ -14,7 +14,9 @@
     "canvas-txt": "^2.0.8",
     "core-js": "^3.6.4",
     "easyqrcodejs": "^3.6.0",
+    "moment": "^2.26.0",
     "paynowqr": "^1.1.0",
+    "v-money": "^0.8.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {

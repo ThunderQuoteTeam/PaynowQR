@@ -49,7 +49,7 @@
                         label-size="sm"
                         :state="qrForm.uen ? null : false"
                       >
-                        <b-form-input :debounce="debouncer" id="uen" size="sm" v-model="qrForm.uen"></b-form-input>
+                        <b-form-input placeholder="Enter UEN of recipient organisation" :debounce="debouncer" id="uen" size="sm" v-model="qrForm.uen"></b-form-input>
                         <template slot="description">
                           <p class="text-white">UEN of the receiver.</p>
                         </template>
@@ -76,7 +76,7 @@
                             :options="[{text: 'Yes', value: true}, {text: 'No', value: false}]"
                           ></b-form-radio-group>
                           <template slot="description">
-                            <p class="text-white">Whether or not to allow editing of payment amount. Defaults to false if amount is specified.</p>
+                            <p class="text-white">Whether or not to allow editing of payment amount.</p>
                           </template>
 
                         </b-form-group>
@@ -90,7 +90,7 @@
                           label-for="amount"
                           label-size="sm"
                         >
-                          <b-form-input :debounce="debouncer" id="amount" size="sm" type="number" step="0.01" min="0.00" @input="fixAmount" v-model="qrForm.amount"></b-form-input>
+                          <b-form-input :debounce="debouncer" id="amount" size="sm" v-model.lazy="qrForm.amount" v-money="money"></b-form-input>
                           <template slot="description">
                             <p class="text-white">The amount to pay.</p>
                           </template>
@@ -141,61 +141,6 @@
                           <template slot="description">
                             <p class="text-white">Company name to embed in the QR code. Optional.</p>
                           </template>
-                        </b-form-group>
-                      </div>
-
-                      <hr class="border-dim-white" />
-                      <h5 class="settings-section mb-3">General QR Code Image Settings</h5>
-
-                      <div>
-                        <b-form-group
-                          label-cols-sm="4"
-                          label-cols-lg="3"
-                          label="QR Code light color:"
-                          label-for="qrcode-light-color"
-                          label-size="sm"
-                          class="mt-2"
-                        >
-                          <b-form-input :debounce="debouncer" id="qrcode-light-color" size="sm" type="color" v-model="qr.color.light"></b-form-input>
-                        </b-form-group>
-                      </div>
-
-                      <div>
-                        <b-form-group
-                          label-cols-sm="4"
-                          label-cols-lg="3"
-                          label="QR Code dark color:"
-                          label-for="qrcode-dark-color"
-                          label-size="sm"
-                          class="mt-2"
-                        >
-                          <b-form-input :debounce="debouncer" id="qrcode-dark-color" size="sm" type="color" v-model="qr.color.dark"></b-form-input>
-                        </b-form-group>
-                      </div>
-
-                      <div>
-                        <b-form-group
-                          label-cols-sm="4"
-                          label-cols-lg="3"
-                          label="QR Code Border Size:"
-                          label-for="border-size"
-                          label-size="sm"
-                          class="mt-2"
-                        >
-                          <b-form-input :debounce="debouncer" id="border-size" size="sm" type="range" step="1" min="12" max="20" v-model="qr.border.size"></b-form-input>
-                        </b-form-group>
-                      </div>
-
-                      <div v-if="qrLogo.src">
-                        <b-form-group
-                          label-cols-sm="4"
-                          label-cols-lg="3"
-                          label="QR Code Border Color:"
-                          label-for="qrcode-border-color"
-                          label-size="sm"
-                          class="mt-2"
-                        >
-                          <b-form-input :debounce="debouncer" id="qrcode-border-color" size="sm" type="color" v-model="qr.border.color"></b-form-input>
                         </b-form-group>
                       </div>
 
@@ -467,7 +412,60 @@
                       </div>
 
                       <hr class="border-dim-white" />
-                      <h5 class="settings-section mb-3">Background Image</h5>
+                      <h5 class="settings-section mb-3">General QR Code Image Settings</h5>
+
+                      <div>
+                        <b-form-group
+                          label-cols-sm="4"
+                          label-cols-lg="3"
+                          label="QR Code light color:"
+                          label-for="qrcode-light-color"
+                          label-size="sm"
+                          class="mt-2"
+                        >
+                          <b-form-input :debounce="debouncer" id="qrcode-light-color" size="sm" type="color" v-model="qr.color.light"></b-form-input>
+                        </b-form-group>
+                      </div>
+
+                      <div>
+                        <b-form-group
+                          label-cols-sm="4"
+                          label-cols-lg="3"
+                          label="QR Code dark color:"
+                          label-for="qrcode-dark-color"
+                          label-size="sm"
+                          class="mt-2"
+                        >
+                          <b-form-input :debounce="debouncer" id="qrcode-dark-color" size="sm" type="color" v-model="qr.color.dark"></b-form-input>
+                        </b-form-group>
+                      </div>
+
+                      <div>
+                        <b-form-group
+                          label-cols-sm="4"
+                          label-cols-lg="3"
+                          label="QR Code Border Size:"
+                          label-for="border-size"
+                          label-size="sm"
+                          class="mt-2"
+                        >
+                          <b-form-input :debounce="debouncer" id="border-size" size="sm" type="range" step="1" min="12" max="20" v-model="qr.border.size"></b-form-input>
+                        </b-form-group>
+                      </div>
+
+                      <div v-if="qrLogo.src">
+                        <b-form-group
+                          label-cols-sm="4"
+                          label-cols-lg="3"
+                          label="QR Code Border Color:"
+                          label-for="qrcode-border-color"
+                          label-size="sm"
+                          class="mt-2"
+                        >
+                          <b-form-input :debounce="debouncer" id="qrcode-border-color" size="sm" type="color" v-model="qr.border.color"></b-form-input>
+                        </b-form-group>
+                      </div>
+
                       <div>
                         <b-form-group
                           label-cols-sm="4"
@@ -628,7 +626,7 @@
                           label-size="sm"
                           :state="qrForm.uen ? null : false"
                         >
-                          <b-form-input :debounce="debouncer" id="uen" size="sm" v-model="qrForm.uen"></b-form-input>
+                          <b-form-input placeholder="Enter UEN of recipient organisation" :debounce="debouncer" id="uen" size="sm" v-model="qrForm.uen"></b-form-input>
                           <template slot="description">
                             <p class="text-white">UEN of the receiver.</p>
                           </template>
@@ -655,7 +653,7 @@
                               :options="[{text: 'Yes', value: true}, {text: 'No', value: false}]"
                             ></b-form-radio-group>
                             <template slot="description">
-                              <p class="text-white">Whether or not to allow editing of payment amount. Defaults to false if amount is specified.</p>
+                              <p class="text-white">Whether or not to allow editing of payment amount.</p>
                             </template>
 
                           </b-form-group>
@@ -669,7 +667,7 @@
                             label-for="amount"
                             label-size="sm"
                           >
-                            <b-form-input :debounce="debouncer" id="amount" size="sm" type="number" step="0.01" min="0.00"  @input="fixAmount" v-model="qrForm.amount"></b-form-input>
+                            <b-form-input :debounce="debouncer" id="amount" size="sm" v-model.lazy="qrForm.amount" v-money="money"></b-form-input>
                             <template slot="description">
                               <p class="text-white">The amount to pay.</p>
                             </template>
@@ -723,64 +721,7 @@
                           </b-form-group>
                         </div>
 
-
-                        <hr class="border-dim-white" />
-                        <h5 class="settings-section mb-3">General QR Code Image Settings</h5>
-
-
-                        <div>
-                          <b-form-group
-                            label-cols-sm="4"
-                            label-cols-lg="3"
-                            label="QR Code light color:"
-                            label-for="qrcode-light-color"
-                            label-size="sm"
-                            class="mt-2"
-                          >
-                            <b-form-input :debounce="debouncer" id="qrcode-light-color" size="sm" type="color" v-model="qr.color.light"></b-form-input>
-                          </b-form-group>
-                        </div>
-
-                        <div>
-                          <b-form-group
-                            label-cols-sm="4"
-                            label-cols-lg="3"
-                            label="QR Code dark color:"
-                            label-for="qrcode-dark-color"
-                            label-size="sm"
-                            class="mt-2"
-                          >
-                            <b-form-input :debounce="debouncer" id="qrcode-dark-color" size="sm" type="color" v-model="qr.color.dark"></b-form-input>
-                          </b-form-group>
-                        </div>
-
-                        <div>
-                          <b-form-group
-                            label-cols-sm="4"
-                            label-cols-lg="3"
-                            label="QR Code Border Size:"
-                            label-for="border-size"
-                            label-size="sm"
-                            class="mt-2"
-                          >
-                            <b-form-input :debounce="debouncer" id="border-size" size="sm" type="range" step="1" min="12" max="20" v-model="qr.border.size"></b-form-input>
-                          </b-form-group>
-                        </div>
-
-                        <div v-if="qrLogo.src">
-                          <b-form-group
-                            label-cols-sm="4"
-                            label-cols-lg="3"
-                            label="QR Code Border Color:"
-                            label-for="qrcode-border-color"
-                            label-size="sm"
-                            class="mt-2"
-                          >
-                            <b-form-input :debounce="debouncer" id="qrcode-border-color" size="sm" type="color" v-model="qr.border.color"></b-form-input>
-                          </b-form-group>
-                        </div>
-
-                        <hr class="border-dim-white" />
+<hr class="border-dim-white" />
                         <h5 class="settings-section mb-3">Logo</h5>
                         
                         
@@ -1048,7 +989,62 @@
                         </div>
 
                         <hr class="border-dim-white" />
-                        <h5 class="settings-section mb-3">Background Image</h5>
+                        <h5 class="settings-section mb-3">General QR Code Image Settings</h5>
+
+
+                        <div>
+                          <b-form-group
+                            label-cols-sm="4"
+                            label-cols-lg="3"
+                            label="QR Code light color:"
+                            label-for="qrcode-light-color"
+                            label-size="sm"
+                            class="mt-2"
+                          >
+                            <b-form-input :debounce="debouncer" id="qrcode-light-color" size="sm" type="color" v-model="qr.color.light"></b-form-input>
+                          </b-form-group>
+                        </div>
+
+                        <div>
+                          <b-form-group
+                            label-cols-sm="4"
+                            label-cols-lg="3"
+                            label="QR Code dark color:"
+                            label-for="qrcode-dark-color"
+                            label-size="sm"
+                            class="mt-2"
+                          >
+                            <b-form-input :debounce="debouncer" id="qrcode-dark-color" size="sm" type="color" v-model="qr.color.dark"></b-form-input>
+                          </b-form-group>
+                        </div>
+
+                        <div>
+                          <b-form-group
+                            label-cols-sm="4"
+                            label-cols-lg="3"
+                            label="QR Code Border Size:"
+                            label-for="border-size"
+                            label-size="sm"
+                            class="mt-2"
+                          >
+                            <b-form-input :debounce="debouncer" id="border-size" size="sm" type="range" step="1" min="12" max="20" v-model="qr.border.size"></b-form-input>
+                          </b-form-group>
+                        </div>
+
+                        <div v-if="qrLogo.src">
+                          <b-form-group
+                            label-cols-sm="4"
+                            label-cols-lg="3"
+                            label="QR Code Border Color:"
+                            label-for="qrcode-border-color"
+                            label-size="sm"
+                            class="mt-2"
+                          >
+                            <b-form-input :debounce="debouncer" id="qrcode-border-color" size="sm" type="color" v-model="qr.border.color"></b-form-input>
+                          </b-form-group>
+                        </div>
+
+                      
                         <div>
                           <b-form-group
                             label-cols-sm="4"
@@ -1115,7 +1111,7 @@
                       </div>
                     </b-col>
 
-                    <b-col cols="6" md="5" lg="6" xl="5"></b-col>
+                    <b-col cols="6" md="5" lg="6" xl="5" class="background"></b-col>
                   </b-row>
                 </div>
             </div>
@@ -1133,6 +1129,8 @@
 import PaynowQR from 'paynowqr';
 import * as QRCode from 'easyqrcodejs'   
 import canvasTxt from 'canvas-txt'
+import moment from 'moment'
+import {VMoney} from 'v-money'
 
 let getInitialData = () => {
   return {
@@ -1142,6 +1140,14 @@ let getInitialData = () => {
       generating: false,
       inMobile: window.innerWidth <= 991 ? true : false,
       rawDate: '',
+      money: {
+        decimal: '.',
+        thousands: '',
+        prefix: '',
+        suffix: '',
+        precision: 2,
+        masked: false /* doesn't work with directive */
+      },
       qrForm: {
         uen:'',           //Required: UEN of company
         amount : '500.00',               //Specify amount of money to pay.
@@ -1196,6 +1202,7 @@ let getInitialData = () => {
 export default {
   name: 'PaynowQRDemo',
   data: getInitialData,
+  directives: {money: VMoney},
   watch: {
     inMobile(){
       this.reloadOutput();
@@ -1260,7 +1267,9 @@ export default {
   mounted() {
     window.addEventListener('resize', this.resizeHandler)
     this.useDefaultLogo();
+    this.rawDate = moment().add('years', 5).format('YYYY-MM-DD');
     this.reloadOutput();
+    
   },
   destroyed(){
     window.removeEventListener('resize', this.resizeHandler);
@@ -1737,6 +1746,10 @@ h1 {
 
 .spacer {
   height: 50px;
+}
+
+.background {
+  z-index: -1;
 }
 </style>
 
