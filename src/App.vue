@@ -3,6 +3,7 @@
       <div v-if="!inMobile" class="thunderquote-footer full-width">
         <div class="m-2" >Made by <a class="no-style-link" target="_blank" href="https://thunderquote.com">ThunderQuote</a></div>
       </div>
+
       <div v-if="!inMobile" class="github-header full-width">
         <a class="github-corner" :href="gitHubLink" title="GitHub">
           <svg width="80" height="80" viewBox="0 0 250 250">
@@ -29,7 +30,6 @@
       </div>
       
       <div class="main-container" :class="{'color-white': inMobile}">
-        
         <div v-if="inMobile" class="d-flex justify-content-center flex-column mt-0 mb-4 mx-3">
           <div class="d-flex justify-content-center align-items-center mb-0 my-4">
             <a href="https://thunderquote.com" target="_blank"><img class="mr-2" src="data:image/png;base64,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"/></a>
@@ -50,9 +50,7 @@
                         :state="qrForm.uen ? null : false"
                       >
                         <b-form-input placeholder="Enter UEN of recipient organisation" :debounce="debouncer" id="uen" size="sm" v-model="qrForm.uen"></b-form-input>
-                        <template slot="description">
-                          <p class="text-white">UEN of the receiver.</p>
-                        </template>
+                      
 
                         <template slot="invalid-feedback">
                           <strong class="text-white">Required.</strong>
@@ -534,46 +532,44 @@
 
                   </div>
                 </b-col>
-              <b-col sm="12" lg="6" xl="6" class="col-box col-box-second p-4" :class="{'corners-second': !inMobile, 'corners-mobile-second': inMobile}">
-                <div v-if="qrForm.uen" class="second-box-content-container">
-                  <div>
-                    <label>QR Code Text Output (click on this box to copy):</label>
+                <b-col sm="12" lg="6" xl="6" class="col-box col-box-second p-4" :class="{'corners-second': !inMobile, 'corners-mobile-second': inMobile}">
+                  <div v-if="qrForm.uen" class="second-box-content-container">
                     <div>
-                      <code>
-                        <b-form-textarea @click="copyToClipboard" class="output-text" :rows="5" readonly v-model="output" no-resize/>
-                      </code>
-                    </div>
-                  </div>
-                  <div class="mt-3">
-                    <label>QR Code Image Output:</label>
-                    <div :class="{'qr-image-container': !inMobile}" class="d-flex justify-content-center align-items-center">
-                      <div v-show="!generating">
-                        <div :class="{'qr-image-container': !inMobile}" id="qr-image" ref="qrcode" @click="downloadqRCodeImage" class="d-flex justify-content-center align-items-center"></div>
-                      </div>
-                      <div v-show="generating">
-                        <p>Generating...</p>
+                      <label>QR Code Text Output (click on this box to copy):</label>
+                      <div>
+                        <code>
+                          <b-form-textarea @click="copyToClipboard" class="output-text" :rows="5" readonly v-model="output" no-resize/>
+                        </code>
                       </div>
                     </div>
                     <div class="mt-3">
-                      <div class="text-muted tip">Tip: Try scanning the QR Code first to make sure it's readable by the PayNow QR reader before usage.</div>
-                    </div>
-                    <div class="mt-3 d-flex justify-content-center">
-                      <b-button variant="light" @click="downloadqRCodeImage">Save QR Code Image</b-button>
+                      <label>QR Code Image Output:</label>
+                      <div :class="{'qr-image-container': !inMobile}" class="d-flex justify-content-center align-items-center">
+                        <div v-show="!generating">
+                          <div :class="{'qr-image-container': !inMobile}" id="qr-image" ref="qrcode" @click="downloadqRCodeImage" class="d-flex justify-content-center align-items-center"></div>
+                        </div>
+                        <div v-show="generating">
+                          <p>Generating...</p>
+                        </div>
+                      </div>
+                      <div class="mt-3">
+                        <div class="text-muted tip">Tip: Try scanning the QR Code first to make sure it's readable by the PayNow QR reader before usage.</div>
+                      </div>
+                      <div class="mt-3 d-flex justify-content-center">
+                        <b-button variant="light" @click="downloadqRCodeImage">Save QR Code Image</b-button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="d-flex justify-content-center align-items-center full-height" v-else>
-                  <h3 class="text-center">Please enter the receiver UEN</h3>
-                </div>
-              </b-col>
+                  <div class="d-flex flex-column full-height" v-else-if="false">
+                    <welcome-message/>
+                  </div>
+                </b-col>
             </b-row>
           </div>
         </div>
 
         <div v-else>
-          <div class="spacer">
-
-          </div>
+          <div class="spacer"></div>
 
           <div class="d-inline">
             <div class="diagonal-box">
@@ -581,7 +577,6 @@
             <div class="diagonal-box-2">
             </div>
           </div>
-
 
           <div>
             <div class="new-child-box py-2 px-4" v-if="qrForm.uen">
@@ -609,8 +604,8 @@
                 </div>
               </div>
             </div>
-            <div class="new-box-container mb-5 d-flex justify-content-center align-items-center">
-                <div class="new-box px-4">
+            <div class="new-box-container flex-column mb-5 d-flex justify-content-center align-items-center">
+                <div class="new-box px-4 pb-4">
                   <div class="d-flex justify-content-center align-items-center mb-0 my-4">
                     <a href="https://thunderquote.com" target="_blank"><img class="mr-2" src="data:image/png;base64,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"/></a>
                     <h3 class="text-center mb-0">PayNow QR Code Generator</h3>
@@ -627,9 +622,7 @@
                           :state="qrForm.uen ? null : false"
                         >
                           <b-form-input placeholder="Enter UEN of recipient organisation" :debounce="debouncer" id="uen" size="sm" v-model="qrForm.uen"></b-form-input>
-                          <template slot="description">
-                            <p class="text-white">UEN of the receiver.</p>
-                          </template>
+                         
 
                           <template slot="invalid-feedback">
                             <strong class="text-white">Required.</strong>
@@ -721,7 +714,7 @@
                           </b-form-group>
                         </div>
 
-<hr class="border-dim-white" />
+                  <hr class="border-dim-white" />
                         <h5 class="settings-section mb-3">Logo</h5>
                         
                         
@@ -1114,6 +1107,9 @@
                     <b-col cols="6" md="5" lg="6" xl="5" class="background"></b-col>
                   </b-row>
                 </div>
+                <div v-if="false" class="new-box-2">
+                  <welcome-message/>
+                </div>
             </div>
           </div>
           
@@ -1131,6 +1127,7 @@ import * as QRCode from 'easyqrcodejs'
 import canvasTxt from 'canvas-txt'
 import moment from 'moment'
 import {VMoney} from 'v-money'
+import welcomeMessage from '@/assets/components/welcomeMessage'
 
 let getInitialData = () => {
   return {
@@ -1202,6 +1199,9 @@ let getInitialData = () => {
 export default {
   name: 'PaynowQRDemo',
   data: getInitialData,
+  components: {
+    welcomeMessage
+  },
   directives: {money: VMoney},
   watch: {
     inMobile(){
@@ -1732,6 +1732,14 @@ h1 {
   box-shadow: 4px 17px 52px -3px #6768c5;
 }
 
+.new-box-2 {
+  background: #888bc3;
+  width: 800px;
+  border-radius: 4px;
+  /* border: 3px solid #8c8cfa; */
+  box-shadow: 4px 17px 52px -3px #6768c5;
+}
+
 .new-child-box {
   position: fixed;
   border: 0px solid #8688d6;
@@ -1750,6 +1758,10 @@ h1 {
 
 .background {
   z-index: -1;
+}
+
+.text-tq {
+  color: #8788d6;
 }
 </style>
 
