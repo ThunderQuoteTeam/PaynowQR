@@ -19,7 +19,8 @@
   },
   "scripts": {
     "build": "rollup --config",
-    "test": "node example"
+    "test": "node example",
+    "release": "np --branch production"
   },
   "repository": {
     "type": "git",
