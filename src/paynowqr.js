@@ -135,7 +135,7 @@ class PaynowQR{
     // ID 63 (Checksum) 04 (4 characters)
     // Do a CRC16 of the whole string including the "6304"
     // then append it to the end.
-    str += '6304' + this.crc16(str + '6304');
+    str += '6304' + this.padLeft(this.crc16(str + '6304'), 4);
   
     return str;
   
