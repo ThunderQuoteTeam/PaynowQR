@@ -60,6 +60,8 @@ Dynamically generating payment QR codes on e-commerce or donation pages that all
 
 Can be used in conjunction with Bank APIs to detect resolved payments.
 
+Integration with Xero Invoicing -  see: https://github.com/ThunderQuoteTeam/XeroPayNowQR
+
 
 
 ## To do
